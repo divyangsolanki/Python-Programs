@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<xs:element name="protocol" type="protocolType">
+</xs:element>
+
+<xs:complexType name="protocolType" >
+	<xs:sequence>
+		<xs:element type="xs:string" name="message" minOccurs="1"/>
+            <xs:element type="xs:string" name="topic" minOccurs="0"/>
+	</xs:sequence>
+</xs:complexType>
+</xs:schema>
