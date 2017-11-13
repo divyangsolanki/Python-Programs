@@ -1,0 +1,12 @@
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+<form action="/login" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Log in"></br></br>
+  <a style="margin-top: 25px;text-decoration: none;" class="deletetask" href="{{ url_for('signup')}}">Signup </a>
+</form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+<!doctype html>
+<p><h3>Already Done TODO Items:</h3></p>
+<p><a href="/todo">Home</a></p>
+<table border="1">
+  <tr>
+      <th>Task_id</th>
+      <th>Description</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+{%for row in rows%}
+  <tr>
+    <td>{{row[0]}}</td>
+    <td>{{row[1]}}</td>
+    <td><a href="{{ url_for('edit_item',Task_id = row[0])}}"> Update</a></td>
+    <td><a href="{{ url_for('deleted',Task_id = row[0])}}"> Delete</a></td>
+  </tr>
+
+{%endfor%}
+</table>
+<p>Create ::  <a href="/new">New</a> item</p>
+<p><a style="margin-left: 115px;text-decoration: none;" class="deletetask" href="{{ url_for('do_admin_logout')}}">Logout</a></p>

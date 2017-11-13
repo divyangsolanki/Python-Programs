@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>To-do Application</title>
+</head>
+
+<body>
+    {% block body %} {% if session['logged_in'] %}
+    <p>You're logged in already!</p>
+    {% else %}
+    <form action="/signup" method="GET">
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Signup</h1>
+                </div>
+
+                <div class="login-form">
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="username" name="username">
+
+                    </div>
+                    <div class="control-group">
+                        <input type="password" class="login-field" value="" placeholder="password" name="password">
+
+                    </div>
+
+                    <input type="submit" value="SIgn Up" class="btn btn-primary btn-large btn-block">
+                    <br>
+                </div>
+                <a style="margin-left: 115px;text-decoration: none;" class="deletetask" href="{{ url_for('do_admin_login')}}">Login</a>
+            </div>
+        </div>
+    </form>
+    {%endif%}
+    {%endblock%}
